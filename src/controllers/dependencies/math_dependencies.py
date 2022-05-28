@@ -5,5 +5,5 @@ def calculate_sqrt(input: float) -> float:
     return math.sqrt(input)
 
 def calculate_average(list: list[float]) -> float:
-    numpy_array = np.array([1,2,3,4]) 
+    numpy_array = np.array(list) 
     return np.average(numpy_array)
