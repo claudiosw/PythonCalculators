@@ -1,1 +1,1 @@
-from .math_dependencies import calculate_sqrt, calculate_average
+from .math_dependencies import calculate_sqrt, calculate_average, calculate_standard_deviation

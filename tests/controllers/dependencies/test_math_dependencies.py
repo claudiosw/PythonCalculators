@@ -1,4 +1,4 @@
-from src.controllers.dependencies import calculate_sqrt, calculate_average
+from src.controllers.dependencies import calculate_sqrt, calculate_average, calculate_standard_deviation
 import numpy as np
 import pytest
 
@@ -15,3 +15,10 @@ def test_calculate_sqrt(input_number, expected_result):
 ])
 def test_calculate_average(input_list, expected_result):
     assert calculate_average(input_list) == expected_result
+
+@pytest.mark.parametrize("input_list, expected_result", [
+    ([1, 2, 3], np.std([1, 2, 3])),
+    ([1, 3, 6], np.std([1, 3, 6]))
+])
+def test_calculate_standard_deviation(input_list, expected_result):
+    assert calculate_standard_deviation(input_list) == expected_result
