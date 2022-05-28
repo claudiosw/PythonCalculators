@@ -1,13 +1,12 @@
-from ast import Raise
-from typing import Type, Dict
+from typing import Dict
 from .dependencies.math_dependencies import calculate_sqrt, calculate_average
 
 class RunFirstCalculatorController:
-    """ Class to define personcase: Register Book """
+    """ Class to define first calculator """
 
     def run(self, calculator_informations: Dict) -> Dict[bool, float]:
-        """Register book
-        :param  - book_informations: book informations
+        """Run first calculator
+        :param  - calculator_informations: calculator informations
         :return - Dictionary with informations of the process
         """
 
