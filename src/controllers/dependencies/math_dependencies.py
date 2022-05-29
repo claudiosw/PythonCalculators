@@ -11,3 +11,7 @@ def calculate_average(list: list[float]) -> float:
 def calculate_standard_deviation(list: list[float]) -> float:
     numpy_array = np.array(list) 
     return np.std(numpy_array)
+
+def calculate_variance(list: list[float]) -> float:
+    numpy_array = np.array(list) 
+    return np.var(numpy_array)
