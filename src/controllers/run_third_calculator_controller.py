@@ -1,12 +1,12 @@
 from typing import List, Dict
-from .dependencies.math_dependencies import calculate_standard_deviation
+from .dependencies.math_dependencies import calculate_standard_deviation, calculate_variance
 
 
-class RunSecondCalculatorController:
-    """ Class to define second calculator """
+class RunThirdCalculatorController:
+    """ Class to define third calculator """
 
     def run(self, calculator_informations: Dict) -> Dict[bool, float]:
-        """Run second calculator
+        """Run third calculator
         :param  - calculator_informations: calculator informations
         :return - Dictionary with informations of the process
         """
@@ -31,6 +31,10 @@ class RunSecondCalculatorController:
         except ValueError:
             raise ValueError("At least one input is not a real number")
 
-    def __calculate(self, numbers_list: List[float]) -> float:
-        calculated_list = [(item * 11) ** 0.95 for item in numbers_list]
-        return 1 / calculate_standard_deviation(calculated_list)
+    def __calculate(self, numbers_list: List[float]) -> bool:
+        standard_deviation = calculate_standard_deviation(numbers_list)
+        variance = calculate_variance(numbers_list)
+        if variance > standard_deviation:
+            return True
+        else:
+            return False

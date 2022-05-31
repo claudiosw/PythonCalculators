@@ -1,6 +1,7 @@
 from typing import Dict
 from .dependencies.math_dependencies import calculate_sqrt, calculate_average
 
+
 class RunFirstCalculatorController:
     """ Class to define first calculator """
 
@@ -10,17 +11,12 @@ class RunFirstCalculatorController:
         :return - Dictionary with informations of the process
         """
 
-        response = None
-
         try:
-            print("start")
             self.__convert_validate(calculator_informations)
-            print(f"calculator_informations={calculator_informations}")
             result = self.__calculate(calculator_informations['real_number_int'])
-            print(f"result={result}")
-            return { "success": True, "result": result }
+            return {"success": True, "result": result}
         except Exception as exception:
-            return { "success": False, "error": str(exception) }
+            return {"success": False, "error": str(exception)}
 
     def __convert_validate(self, calculator_informations: Dict):
         try:
