@@ -3,6 +3,9 @@ from src.controllers.run_third_calculator_controller import RunThirdCalculatorCo
 
 
 def run_third_calculator_process() -> None:
+    """ Process that is run when the user chooses the third calculator
+        Calls the respectives controllers and views
+    """
     run_third_calculator_view = RunThirdCalculatorView()
     run_third_calculator_controller = RunThirdCalculatorController()
 
