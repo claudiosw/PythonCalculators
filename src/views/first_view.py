@@ -1,4 +1,6 @@
 def introduction_page():
+    """ View that is shown when the program is executed for the first time
+    """
     message = '''
         Calculators System
 
