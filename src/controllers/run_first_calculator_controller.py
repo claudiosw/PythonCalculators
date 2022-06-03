@@ -1,8 +1,9 @@
 from typing import Dict
 from .dependencies.math_dependencies import calculate_sqrt, calculate_average
+from .interfaces.calculators_interface import CalculatorsInterface
 
 
-class RunFirstCalculatorController:
+class RunFirstCalculatorController(CalculatorsInterface):
     """ Class to define first calculator """
 
     def run(self, calculator_informations: Dict) -> Dict[bool, float]:

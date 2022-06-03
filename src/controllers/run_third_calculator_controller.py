@@ -1,8 +1,9 @@
 from typing import List, Dict
 from .dependencies.math_dependencies import calculate_standard_deviation, calculate_variance
+from .interfaces.calculators_interface import CalculatorsInterface
 
 
-class RunThirdCalculatorController:
+class RunThirdCalculatorController(CalculatorsInterface):
     """ Class to define third calculator """
 
     def run(self, calculator_informations: Dict) -> Dict[bool, float]:
