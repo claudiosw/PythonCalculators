@@ -1,18 +1,20 @@
 from typing import List, Dict
 from .dependencies.math_dependencies import calculate_standard_deviation, calculate_variance
 from .interfaces.calculators_interface import CalculatorsInterface
+from src.models.http_types.http_request import HttpRequest
 
 
 class RunThirdCalculatorController(CalculatorsInterface):
     """ Class to define third calculator """
 
-    def run(self, calculator_informations: Dict) -> Dict[bool, float]:
+    def run(self, http_request: HttpRequest) -> Dict[bool, float]:
         """Run third calculator
-        :param  - calculator_informations: calculator informations
+        :param  - http_request: http request
         :return - Dictionary with informations of the process
         """
 
         try:
+            calculator_informations = {"list_real_numbers": http_request.body["list_real_numbers"]}
             self.__convert_validate(calculator_informations)
             result = self.__calculate(calculator_informations['list_real_numbers_float'])
             return {"success": True, "result": result}

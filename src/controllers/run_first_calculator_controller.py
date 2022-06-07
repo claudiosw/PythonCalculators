@@ -9,7 +9,7 @@ class RunFirstCalculatorController(CalculatorsInterface):
 
     def run(self, http_request: HttpRequest) -> Dict[bool, float]:
         """ Run first calculator
-        :param  - calculator_informations: calculator informations
+        :param  - http_request: http request
         :return - Dictionary with informations of the process
         """
 
