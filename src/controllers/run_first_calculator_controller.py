@@ -1,18 +1,20 @@
 from typing import Dict
 from .dependencies.math_dependencies import calculate_sqrt, calculate_average
 from .interfaces.calculators_interface import CalculatorsInterface
+from src.models.http_types.http_request import HttpRequest
 
 
 class RunFirstCalculatorController(CalculatorsInterface):
     """ Class to define first calculator """
 
-    def run(self, calculator_informations: Dict) -> Dict[bool, float]:
+    def run(self, http_request: HttpRequest) -> Dict[bool, float]:
         """ Run first calculator
         :param  - calculator_informations: calculator informations
         :return - Dictionary with informations of the process
         """
 
         try:
+            calculator_informations = {"real_number": http_request.body["real_number"]}
             self.__convert_validate(calculator_informations)
             result = self.__calculate(calculator_informations['real_number_float'])
             return {"success": True, "result": result}

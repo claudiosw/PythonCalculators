@@ -11,7 +11,7 @@ calculators_bp = Blueprint(
 )
 
 
-@calculators_bp.route('/calculators/<calculator_number>', methods=['POST'])
-def calculators(calculator_number):
+@calculators_bp.route('/calculators/1', methods=['POST'])
+def calculators():
     http_response = request_adapter(request, RunFirstCalculatorController())
     return jsonify(http_response.body), http_response.status_code
