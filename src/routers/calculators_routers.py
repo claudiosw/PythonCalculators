@@ -1,5 +1,6 @@
 from src.controllers.run_first_calculator_controller import RunFirstCalculatorController
 from src.controllers.run_second_calculator_controller import RunSecondCalculatorController
+from src.controllers.run_third_calculator_controller import RunThirdCalculatorController
 from src.helpers.request_adapter import request_adapter
 from flask import Blueprint, request, jsonify
 
@@ -35,5 +36,5 @@ def calculator_3():
     """ Router of the Calculator 3
         :return - Response and status code
     """
-    http_response = request_adapter(request, RunSecondCalculatorController())
+    http_response = request_adapter(request, RunThirdCalculatorController())
     return jsonify(http_response.body), http_response.status_code
