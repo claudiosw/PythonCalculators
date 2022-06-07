@@ -5,7 +5,15 @@ from src.models.http_types.http_request import HttpRequest
 from src.controllers.interfaces.calculators_interface import CalculatorsInterface
 
 
-def request_adapter(request: FlaskRequest, process: Type[CalculatorsInterface]) -> Type[HttpResponse]:
+def request_adapter(
+    request: FlaskRequest,
+    process: Type[CalculatorsInterface]
+) -> Type[HttpResponse]:
+    """ Adapter Function that converts a Flask request to Http response
+        :param - request: Flask Request
+               - process: Calculator object that want to calculate
+        :return - Http Response
+    """
     http_request = HttpRequest(
         header=request.headers,
         body=request.json,
